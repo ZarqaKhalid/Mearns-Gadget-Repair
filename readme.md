@@ -28,6 +28,7 @@ JavaScript (Vanilla): For interactive elements like the mobile menu and form UI 
 Font Awesome 6.5.1: For icons (loaded via CDN).
 Google Maps API: Embedded iframe for location.
 📂 Folder Structure
+
 mearns-gadget-repair/
 ├── index.html
 ├── about.html
