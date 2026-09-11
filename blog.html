@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Blog & Repair Guides | Mearns Gadget Repair</title>
+  <meta name="description" content="Helpful gadget repair guides, troubleshooting tips, and tech news from Mearns Gadget Repair Centre in Newton Mearns.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- BLOG GRID FIX & STYLING -->
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .blog-card {
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #eaeaea;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    .blog-card-media {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #f3f4f6;
+    }
+    .blog-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .blog-card:hover .blog-card-media img {
+      transform: scale(1.05);
+    }
+    .blog-badge-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(37, 99, 235, 0.95);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .blog-card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .blog-card-body h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+    .blog-card-body p {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .blog-meta-link {
+      font-size: 14px;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+    .blog-meta-link:hover {
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-info">
+        <div class="top-bar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>47 Raeside Wy, Newton Mearns, Glasgow G77 6YL, United Kingdom</span>
+        </div>
+        <div class="top-bar-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+447864544448">+44 7864 544448</a>
+        </div>
+        <div class="top-bar-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@mearnsgadgetrepair.co.uk">info@mearnsgadgetrepair.co.uk</a>
+        </div>
+      </div>
+      <div class="top-bar-socials">
+        <a href="https://www.facebook.com/MearnsGadgetRepair" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/mearnsgadget/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/mearns-gadget-repair/home/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.pinterest.com/mearnsgadgetrepair/" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        <a href="https://www.youtube.com/@MearnsGadgetRepair" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@mearnsgadgetrepair2" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.google.com/maps/place/Mearns+Gadget+Repair/@55.7643478,-4.3522199,17z/data=!3m1!4b1!4m6!3m5!1s0x48884990850352e9:0x319b76fc615b33bc!8m2!3d55.7643478!4d-4.3522199!16s%2Fg%2F11p5c2ny6j?entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://wa.me/447864544448" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <img src="images/Logo Img.png" alt="Mearns Gadget Repair Logo">
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        
+        <div class="nav-dropdown">
+          <a href="services.html" class="nav-link">Book Repair <i class="fa-solid fa-chevron-down" style="font-size: 11px;"></i></a>
+          <div class="dropdown-menu">
+            <a href="services.html#mobile-repair" class="dropdown-item">Mobile Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#pc-repair" class="dropdown-item">PC Computer Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#smartwatch-repair" class="dropdown-item">Smart Watch Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#ghd-repair" class="dropdown-item">GHD Device Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#macbook-repair" class="dropdown-item">MacBook Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#console-repair" class="dropdown-item">Game Console Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#tablet-repair" class="dropdown-item">Tablet Repair <i class="fa-solid fa-chevron-right"></i></a>
+            <a href="services.html#laptop-repair" class="dropdown-item">Laptop Repair <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+
+        <a href="book-repair.html" class="nav-link">Fix Now</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="book-repair.html" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-screwdriver-wrench"></i> Book My Device
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-bg-container">
+      <div class="hero-bg-blur"></div>
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Expert Tips & Tech News</span>
+        </div>
+        <h1 class="hero-title">Latest News & <span class="gradient-text">Repair Guides</span></h1>
+        <p class="hero-desc">
+          Welcome to the Mearns Gadget Repair blog. Explore expert tips, troubleshooting advice, and tech guides directly from our Newton Mearns repair workbench. Learn how to keep your devices running smoothly!
+        </p>
+
+        <div class="hero-services-tags">
+          <span class="hero-tag"><i class="fa-solid fa-mobile-screen"></i> Screen Repair</span>
+          <span class="hero-tag"><i class="fa-solid fa-droplet"></i> Water Damage</span>
+          <span class="hero-tag"><i class="fa-solid fa-battery-full"></i> Battery Swaps</span>
+          <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Logic Board Fixes</span>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="book-repair.html" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-calendar-check"></i> Book a Repair
+          </a>
+          <a href="tel:+447864544448" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-phone"></i> +44 7864 544448
+          </a>
+        </div>
+
+        <div class="hero-trust-row">
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-shield-check"></i>
+            <span>90-Day Warranty</span>
+          </div>
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Same-Day Turnaround</span>
+          </div>
+          <div class="hero-trust-item">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Free Diagnostics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual with Real Image -->
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="images/all gadget.png" alt="Gadgets repaired by Mearns Gadget Repair">
+        </div>
+
+        <div class="hero-floating-stat">
+          <div class="stat-circle">
+            <i class="fa-solid fa-newspaper"></i>
+          </div>
+          <div class="stat-text">
+            <div class="rating-stars">★★★★★</div>
+            <p>Expert Tech Advice</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG POSTS (WITH ONLINE RELEVANT PICTURES) -->
+  <section class="section">
+    <div class="container">
+      
+      <div class="blog-grid">
+        
+        <!-- Post 1: iPad Battery -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="images/tab 2.jpg" alt="iPad Battery Replacement">
+            <span class="blog-badge-tag">iPad Repair</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>iPad Battery Replacement in Newton Mearns </h3>
+            <p>Is your iPad battery draining fast, not charging properly, or shutting down unexpectedly? Don't worry! Mearns Gadget Repair provides fast, affordable replacement.</p>
+            
+          </div>
+        </article>
+
+        <!-- Post 2: iPhone Water Damage -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="images/water.jpg" alt="iPhone Water Damage Repair">
+            <span class="blog-badge-tag">Water Damage</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>iPhone Water Damage Repair – Save Your Device Before It's Too Late</h3>
+            <p>Fell your iPhone in water? Accidentally spilled tea, juice, or coffee on it? You are not the only one. Ultrasonic board cleaning saves your logic board.</p>
+           
+          </div>
+        </article>
+
+        <!-- Post 3: iPhone Back Glass -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="images/phone 2.jpg" alt="iPhone Back Glass Replacement">
+            <span class="blog-badge-tag">iPhone Repair</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>iPhone Back Glass Replacement – Fast & Reliable Service</h3>
+            <p>iPhone back glass replacement: iPhone back glass is more than an eyesore—it's a safety risk, an indication of greater damage.</p>
+           
+          </div>
+        </article>
+
+        <!-- Post 4: iPhone Charging Port -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1585155770447-2f66e2a397b5?q=80&w=800&auto=format&fit=crop" alt="iPhone Charging Port Repair">
+            <span class="blog-badge-tag">Port Fix</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>iPhone Charging Port Repair – Fast, Affordable & Expert</h3>
+            <p>iPhone Charging Port Repair — linking you to work, family, and the world. But when lint or damage blocks power, we fix it fast.</p>
+            
+          </div>
+        </article>
+
+        <!-- Post 5: iPhone Screen Repair -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?q=80&w=800&auto=format&fit=crop" alt="iPhone Screen Repair">
+            <span class="blog-badge-tag">Screen Repair</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>iPhone Screen Repair – Affordable Solutions for Cracked Screens</h3>
+            <p>iPhone Screen Repair isn't frustrating when handled by Newton Mearns experts. Same-day turnaround and crystal-clear display restoration.</p>
+           
+          </div>
+        </article>
+
+        <!-- Post 6: Samsung Screen Repair -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop" alt="Samsung Phone Screen Repair">
+            <span class="blog-badge-tag">Samsung</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Samsung Phone Screen Repair – Fast, Reliable & Affordable Fixes</h3>
+            <p>Samsung phone screen can turn your day around. One misplaced drop and you lose touch. We replace genuine AMOLED displays with warranty.</p>
+           
+          </div>
+        </article>
+
+        <!-- Post 7: Smartwatch Repair -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="images/smart watch.jpg" alt="Smartwatch Repair Services">
+            <span class="blog-badge-tag">Smart Watch</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Smartwatch Repair Services at The Mearns Gadget Repair</h3>
+            <p>Why Smartwatches Matter: Smartwatches are more than just timepieces—they track fitness and health. Screen and battery fixes in Newton Mearns.</p>
+           
+          </div>
+        </article>
+
+        <!-- Post 8: iPhone Overheating -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1592434134753-a70baf7979d5?q=80&w=800&auto=format&fit=crop" alt="iPhone Overheating Fix">
+            <span class="blog-badge-tag">Thermal Fix</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>iPhone Overheating Fix in Newton Mearns – Fast & Professional</h3>
+            <p>Is your iPhone heating up, draining battery quickly, or shutting down unexpectedly? Mearns Gadget Repair offers expert thermal diagnostics.</p>
+            
+          </div>
+        </article>
+
+        <!-- Post 9: Samsung Fingerprint Sensor -->
+        <article class="blog-card">
+          <div class="blog-card-media">
+            <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?q=80&w=800&auto=format&fit=crop" alt="Samsung Fingerprint Sensor Repair">
+            <span class="blog-badge-tag">Biometrics</span>
+          </div>
+          <div class="blog-card-body">
+            <h3>Samsung Phone Fingerprint Repair: Affordable Fix for Sensor Issues</h3>
+            <p>Samsung phones boast of superior features, slender build, and state-of-the-art security, particularly fingerprint sensor technology.</p>
+          
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner-gradient">
+    <div class="container">
+      <h2>Have a question about a <span>specific repair?</span></h2>
+      <p>Speak to our certified technicians directly for honest advice and no-obligation pricing.</p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-white btn-lg"><i class="fa-solid fa-comments"></i> Talk to Us</a>
+        <a href="tel:+447864544448" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-top-grid">
+      <div class="footer-brand">
+        <img src="images/Logo Img.png" alt="Mearns Gadget Repair Logo">
+        <p>
+          Our expert technicians specialize in repairing a wide range of devices, including laptops, smartwatches, computers, GHD, MacBooks, iPhones, and mobile phones.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/MearnsGadgetRepair" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/mearnsgadget/" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/mearns-gadget-repair/home/" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.pinterest.com/mearnsgadgetrepair/" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          <a href="https://www.youtube.com/@MearnsGadgetRepair" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/@mearnsgadgetrepair2" class="footer-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.google.com/maps/place/Mearns+Gadget+Repair/@55.7643478,-4.3522199,17z/data=!3m1!4b1!4m6!3m5!1s0x48884990850352e9:0x319b76fc615b33bc!8m2!3d55.7643478!4d-4.3522199!16s%2Fg%2F11p5c2ny6j?entry=ttu&g_ep=EgoyMDI2MDkwOC4wIKXMDSoASAFQAw%3D%3D" class="footer-social-link" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://wa.me/447864544448" target="_blank" class="footer-social-link" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html#mobile-repair"><i class="fa-solid fa-check"></i> Mobile Phone Repair</a></li>
+          <li><a href="services.html#pc-repair"><i class="fa-solid fa-check"></i> PC Computer Repair</a></li>
+          <li><a href="services.html#smartwatch-repair"><i class="fa-solid fa-check"></i> Smart Watch Repair</a></li>
+          <li><a href="services.html#ghd-repair"><i class="fa-solid fa-check"></i> GHD Repair</a></li>
+          <li><a href="services.html#macbook-repair"><i class="fa-solid fa-check"></i> MacBook Repair</a></li>
+          <li><a href="services.html#console-repair"><i class="fa-solid fa-check"></i> Game Console Repair</a></li>
+          <li><a href="services.html#tablet-repair"><i class="fa-solid fa-check"></i> Tablet Repairs</a></li>
+          <li><a href="services.html#laptop-repair"><i class="fa-solid fa-check"></i> Laptop Repair</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Useful Links</h3>
+        <ul class="footer-links">
+          <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+          <li><a href="book-repair.html"><i class="fa-solid fa-angle-right"></i> Fix Now</a></li>
+          <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Repair Guides & Blog</a></li>
+          <li><a href="privacy.html"><i class="fa-solid fa-angle-right"></i> Privacy Policy</a></li>
+          <li><a href="terms.html"><i class="fa-solid fa-angle-right"></i> Terms and Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact Us</h3>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@mearnsgadgetrepair.co.uk">info@mearnsgadgetrepair.co.uk</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+447864544448">+44 7864 544448</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>47 Raeside Wy, Newton Mearns, Glasgow G77 6YL, United Kingdom</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-clock"></i>
+          <span>Mon - Sat: 9:00 AM - 6:00 PM<br>Sunday: Emergency On-Call</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Mearns Gadget Repair Centre. All rights reserved. Professional electronics & gadget repairs in Newton Mearns & Glasgow.</p>
+        <p>Powered by <a href="https://www.clicktaketech" target="_blank" rel="noopener noreferrer">Click Take technologies</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/447864544448" target="_blank" class="whatsapp-float" aria-label="WhatsApp Chat">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp Us</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
