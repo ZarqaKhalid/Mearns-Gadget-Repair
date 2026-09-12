@@ -993,6 +993,27 @@ img {
 @media (max-width: 992px) {
   .nav-menu { display: none; }
   .mobile-toggle { display: block; }
+    .nav-menu.open {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0f172a; /* Your dark blue background */
+        z-index: 9999;
+        padding: 1rem 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-menu.open .nav-link {
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: white;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
   
   .hero-grid, .booking-section-grid, .guru-banner-grid {
     grid-template-columns: 1fr;
@@ -1036,43 +1057,4 @@ img {
     grid-template-columns: 1fr;
   }
   .hero-cta-group .btn { width: 100%; }
-}
-/* =========================================
-   MOBILE NAVIGATION FIX
-   ========================================= */
-@media screen and (max-width: 768px) {
-    
-    /* Ensure the header stays above other content */
-    .site-header {
-        position: relative;
-        z-index: 1000; 
-    }
-
-    /* Hide the menu by default on mobile */
-    .nav-menu {
-        display: none; 
-        position: absolute;
-        top: 100%; /* Pushes menu below the header */
-        left: 0;
-        width: 100%;
-        background-color: #0f172a; /* Dark background */
-        flex-direction: column;
-        padding: 1rem 0;
-        z-index: 999; /* Forces menu to sit on top of everything */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.3); 
-    }
-
-    /* Show the menu ONLY when JavaScript adds the 'open' class */
-    .nav-menu.open {
-        display: flex !important; 
-    }
-
-    /* Style the links so they stack nicely on mobile */
-    .nav-menu .nav-link {
-        padding: 1rem;
-        display: block;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-}
+}      
